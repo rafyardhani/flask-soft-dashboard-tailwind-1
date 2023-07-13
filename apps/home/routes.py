@@ -7,6 +7,9 @@ from apps.home import blueprint
 from flask import render_template, request
 from flask_login import login_required
 from jinja2 import TemplateNotFound
+# from flask import Flask, redirect, url_for
+# import os
+# from os.path import join, dirname, realpath
 
 
 @blueprint.route('/index')
@@ -52,3 +55,21 @@ def get_segment(request):
 
     except:
         return None
+
+# app = Flask(__name__)
+# # Upload folder
+# UPLOAD_FOLDER = 'static/files'
+# app.config['UPLOAD_FOLDER'] =  UPLOAD_FOLDER
+
+
+# # Get the uploaded files
+# @app.route("/templates/home/profile.html", methods=['POST'])
+# def uploadFiles():
+#       # get the uploaded file
+#       uploaded_file = request.files['file']
+#       if uploaded_file.filename != '':
+#            file_path = os.path.join(app.config['UPLOAD_FOLDER'], uploaded_file.filename)
+#           # set the file path
+#            uploaded_file.save(file_path)
+#           # save the file
+#       return redirect(url_for('profile'))

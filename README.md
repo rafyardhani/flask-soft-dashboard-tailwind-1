@@ -91,8 +91,7 @@ At this point, the app runs at `http://127.0.0.1:5000/`.
 
 ```
 $ virtualenv env
-$ .\env\Scripts\activate
-$ pip3 install -r requirements.txt
+$ .\env\Scripts -r requirements.txt
 ```
 
 <br />

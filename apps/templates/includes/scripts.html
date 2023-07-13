@@ -4,6 +4,13 @@
   <script src="{{ config.ASSETS_ROOT }}/js/dropdown.js" async></script>
   <script src="{{ config.ASSETS_ROOT }}/js/nav-pills.js" async></script>
   <script src="{{ config.ASSETS_ROOT }}/js/fixed-plugin.js" async></script>
+  <script src="@@path/vendor/dropzone/dist/min/dropzone.min.js"></script>
+  <script>
+  if(d.querySelector('myDropzone')) {
+    // Dropzone class:
+    var myDropzone = new Dropzone("div#myId", { url: "/file/post"});
+}
+</script>
 
   <!-- github button -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
