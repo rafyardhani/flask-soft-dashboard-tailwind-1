@@ -18,6 +18,7 @@ class Config(object):
     SQLALCHEMY_TRACK_MODIFICATIONS = False 
 
     # Assets Management
+    # UPLOAD_FOLDER = os.getenv('UPLOAD_FOLDER','/static/files')
     ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')    
     
 class ProductionConfig(Config):

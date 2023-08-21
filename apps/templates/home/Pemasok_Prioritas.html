@@ -1,0 +1,145 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Produktivitas {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<!-- <div class="w-full px-6 py-6 ">
+    <div class=" w-full max-w-full px-3 mb-6 sm:w-full sm:flex-none xl:mb-0 xl:w-full">
+   <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border p-8">
+        <table class="table-fixed">
+        <thead >
+          <tr class="text-white rounded-md bg-blue-800">
+            <th> Id</th>
+            <th >Nama Pemasok</th>
+            <th>Total Penjualan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Guntur</td>
+           
+            <td>Rp.2.360.418</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Joko</td>
+           
+            <td>Rp.2.378.810</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Indah</td>
+       
+            <td>Rp.2.417.520</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Ilham</td>
+          
+            <td>Rp.2.422.385</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Galang</td>
+         
+            <td>Rp.2.424.888</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Rizal</td>
+          
+            <td>Rp.2.430.593</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Yuli</td>
+    
+            <td>Rp.2.446.238</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Budi Jateng </td>
+   
+            <td>Rp.2.458.383</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+</div> -->
+
+  <!-- <p>Jumlah data dengan Cluster 1: {{ cluster_1_count }}</p> -->
+  <div class="flex flex-wrap mb-2 ">
+     <div class="w-full max-w-full px-3 mb-6 sm:w-full sm:flex-none xl:mb-0 xl:w-full">
+    <div class="relative flex flex-col min-w-0 break-words bg-white shadow-soft-xl rounded-2xl bg-clip-border">
+      <div class="flex-auto p-4">
+    
+          <div class="flex-none w-full max-w-full px-3">
+            <div>
+              <div class="inline-block">
+              <p class="mb-0 font-sans font-semibold leading-normal text-gray-400 text-size-sm inline"> Periode Tahun  :</p>
+            </div>
+            <div class="inline">
+              <p class="mb-0 font-sans font-semibold leading-normal text-size-sm  text-gray-400 inline"> {{oldest_year}} - {{newest_year}}</p>
+            </div>
+            <div class="flex flex-nowrap ">
+            <div class="block">
+              <h5 id="Pembeli_Prioritas" class="mb-0 font-bold mt-4 text-5xl text-slate-900 ">
+                {{cluster_1_count}}
+                
+              </h5> 
+              
+            </div>
+            <div  class="inline-block  flex items-end ml-1">
+              <h5 class="text-gray-400 font-light "> dari </h5>
+            </div>
+            <div class="inline flex items-end mx-2">
+              
+              <h5 id="Total_Pembeli_Prioritas" class="mb-0 font-light mb-1 text-gray-400 text-4xl ">
+                {{amount_cluster}}
+            
+              </h5> 
+            </div>
+          </div>
+              <p class="mb-0 font-sans  leading-normal text-size-lg font-bold text-slate-900 ">Pemasok Prioritas</p>
+            </div>
+          </div>
+        
+      </div>
+      
+       <!-- card 2 -->
+       
+    </div>
+
+   
+    
+  </div>
+  <!--  -->
+  </div>
+  <div class="flex flex-col p-6 w-full max-w-full">
+  <table class="table-auto">
+      <tr>
+          <th class="text-center bg-blue-800 text-white">Id</th>
+          <th class="text-center bg-blue-800 text-white">Nama Pemasok</th>
+          <th class="text-center bg-blue-800 text-white">Total Harga</th>
+      </tr>
+      {% for index, row in data.iterrows() %}
+      {% if row['Cluster'] == 1 %}
+      <tr>
+          <td class="text-center border border-black">{{ row['Id_Profil_Pakan'] }}</td>
+          <td class="text-center border border-black">{{ row['Nama_Pemasok'] }}</td>
+          <td class="text-center border border-black">{{ "Rp.{:,.2f}".format(row['Total_Harga']) }}</td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+  </table>
+</div>
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}
+    

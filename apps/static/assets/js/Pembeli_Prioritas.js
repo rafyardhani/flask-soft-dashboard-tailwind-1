@@ -1,0 +1,1 @@
+var Pembeli_Prioritas = document.getElementById("Pembeli_Prioritas")
